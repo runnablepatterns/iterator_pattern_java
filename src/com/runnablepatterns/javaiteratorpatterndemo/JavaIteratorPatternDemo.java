@@ -2,6 +2,7 @@ package com.runnablepatterns.javaiteratorpatterndemo;
 
 import com.runnablepatterns.javaiteratorpattern.ClientA;
 import com.runnablepatterns.javaiteratorpattern.ClientB;
+import com.runnablepatterns.javaiteratorpattern.ClientC;
 import com.runnablepatterns.javaiteratorpattern.MyDocumentAggregate;
 import com.runnablepatterns.javaiteratorpattern.SaveMyDocument;
 
@@ -22,6 +23,9 @@ public class JavaIteratorPatternDemo {
 		// create client that uses Array
 		MyDocumentAggregate clientB = new ClientB();
 		
+		// create client that uses HashMap
+		MyDocumentAggregate clientC = new ClientC();
+		
 		// create save service
 		SaveMyDocument saveDocument = new SaveMyDocument();
 		
@@ -30,6 +34,9 @@ public class JavaIteratorPatternDemo {
 		
 		// save pdfs
 		saveDocument.saveDocuments(clientB.createIterator());
+		
+		// save xmls
+		saveDocument.saveDocuments(clientC.createIterator());
 	}
 
 }
